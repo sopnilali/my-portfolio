@@ -7,8 +7,6 @@ import React from 'react';
 
 const ProjectCard = ({ project } : {project: Tproject}) => {
 
-    console.log(project)
-
     return (
         <div className=" rounded overflow-hidden shadow-lg p-6 m-4 bg-white">
             <Image
