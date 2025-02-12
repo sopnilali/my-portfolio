@@ -1,6 +1,6 @@
 const AllBlogs = async() => {
 
-    const res = await fetch('https://my-portfolio-server-amber.vercel.app/api/v2/blogs', {
+    const res = await fetch('http://localhost:5000/api/v2/blogs', {
         cache: 'no-cache',
         next: {
             revalidate: 30
@@ -11,7 +11,7 @@ const AllBlogs = async() => {
 }
 
 const SingleBlogs = async(id : string) => {
-    const res = await fetch(`https://my-portfolio-server-amber.vercel.app/api/v2/blogs/details/${id}`, {
+    const res = await fetch(`http://localhost:5000/api/v2/blogs/details/${id}`, {
         cache: 'no-cache',
         next: {
             revalidate: 30
@@ -22,7 +22,7 @@ const SingleBlogs = async(id : string) => {
 }
 
 const getAllProjects = async()=> {
-    const res = await fetch('https://my-portfolio-server-amber.vercel.app/api/v2/projects', {
+    const res = await fetch('http://localhost:5000/api/v2/projects', {
         cache: 'no-cache',
         next: {
             revalidate: 30
@@ -32,7 +32,7 @@ const getAllProjects = async()=> {
 }
 
 const ProjectDetails = async(id : string)=> {
-    const res = await fetch(`https://my-portfolio-server-amber.vercel.app/api/v2/projects/${id}`, {
+    const res = await fetch(`http://localhost:5000/api/v2/projects/${id}`, {
         cache: 'no-cache',
         next: {
             revalidate: 30

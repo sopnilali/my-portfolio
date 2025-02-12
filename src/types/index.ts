@@ -11,12 +11,12 @@ export interface Blog {
 export type Tproject = {
   _id: string;
   title: string;
-  description: string;
+  descriptions: string;
   tools: string;
   image: string;
   githubfrontend: string;
-  liveurl: string;
+  livelink: string;
   githubbackend: string;
-  duration: string;
-  status: string;
+  projectduration: string;
+  projectstatus: string;
 }
