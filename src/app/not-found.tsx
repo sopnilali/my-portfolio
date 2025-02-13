@@ -7,7 +7,7 @@ const NotFoundPage = () => {
         src="https://freefrontend.com/assets/img/html-css-404-page-templates/Pure-CSS-404-Error-Page.gif"
         width={1000}
         height={500}
-        alt="not found page"
+        alt="not found page!"
         className="w-full rounded-3xl"
       />
     </div>
