@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 const BlogDetailsPage = async({params} : any  ) => {
     const {id}  = await params
     const blog = await ServerModuler.SingleBlogs(id)
-    metadata.title = blog?.data?.blogtitle +'| Md Abdul Adud'
-    metadata.description = blog?.data?.blogDescription
+    metadata.title = blog?.data?.title +'| Md Abdul Adud'
+    metadata.description = blog?.data?.description
 
 
   return (
