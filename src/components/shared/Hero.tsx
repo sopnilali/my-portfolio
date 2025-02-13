@@ -15,9 +15,10 @@ const HeroSection = () => {
                         <div className="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
                             <div className="grid items-center gap-12 lg:grid-cols-2">
                                 <div className="mt-12 lg:mt-0">
-                                    <div className="mb-16 text-5xl text-black font-bold tracking-tight md:text-6xl xl:text-7xl">
-                                        Md. Abdul Adud <br /> 
-                                        <h2 className='text-3xl my-4 -mb-8'>I am 2nd Level React Developer</h2>
+                                    <div className="mb-5 text-5xl  md:text-6xl xl:text-7xl">
+                                       <h2 className='font-extrabold uppercase'> Md. Abdul Adud</h2>
+                                        <h2 className='text-3xl my-4 '>I am 2nd Level React Developer</h2>
+                                        <p className=" text-base">I am a software engineer, passionate about building scalable and maintainable applications. I have a deep love for learning and always strive to improve my skills.</p>
                                     </div>
                                     <a className="mb-2 inline-block rounded bg-primary px-12 pt-4 pb-3.5 text-sm font-medium uppercase leading-normal text-white mr-2 shadow bg-gray-600"
                                         data-te-ripple-init data-te-ripple-color="light" href="/contact" role="button">Contact Me</a>

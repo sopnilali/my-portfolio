@@ -20,3 +20,10 @@ export type Tproject = {
   projectduration: string;
   projectstatus: string;
 }
+
+export type TMessage = {
+  _id: string;
+  name: string;
+  email: string;
+  message: string;
+}

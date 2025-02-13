@@ -7,15 +7,15 @@ import { FaCalendar } from "react-icons/fa";
 const BlogCard = ({ blog }: { blog: Blog }) => {
   return (
     <div className="w-full bg-white shadow-md rounded-lg overflow-hidden">
-      <figure>
+      <div>
         <Image
           src={blog.blog_image}
-          width={600}
-          height={100}
+          width={650}
+          height={200}
           alt="blog image"
-          className="rounded-t-lg h-64 object-cover"
+          className="rounded-t-lg h-[100%] object-cover"
         />
-      </figure>
+      </div>
       <div className="p-6">
         <p className="flex items-center justify-center text-teal-600 bg-teal-100 w-32 rounded-full py-1 text-sm">
           <FaCalendar className="mr-2" />
@@ -55,7 +55,7 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
   );
 };
 

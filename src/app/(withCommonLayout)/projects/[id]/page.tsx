@@ -1,7 +1,6 @@
 
 import { ServerModuler } from '@/utils'
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -18,14 +17,14 @@ const ProjectDetailsPage = async({params}: any) => {
     const {id} = await params
 
     const project = await ServerModuler.ProjectDetails(id)
-    metadata.title = project?.data?.projecttitle +' | Md Abdul Adud'
-    metadata.description = project?.data?.projectdescription
+    metadata.title = project?.data?.title +' | Md Abdul Adud'
+    metadata.description = project?.data?.descriptions
 
   return (
     <div>
       <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-4">{project?.data?.title}</h1>
-      <Image src={project?.data?.image} height={300} width={700} alt={project?.data?.title} className="w-full h-64 object-contain mb-4" />
+      <img src={project?.data.image} width={700} height={700} alt={project?.data?.title} className="w-full h-64 object-contain mb-4" />
       <p className="text-gray-700 mb-4">{project?.data?.descriptions}</p>
       <div className="mb-4">
         <h2 className="text-xl font-semibold">Tools Used</h2>

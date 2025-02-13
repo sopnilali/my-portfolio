@@ -1,11 +1,41 @@
+"use client"
+
+import { useCreateBlogMutation } from '@/components/redux/feature/blogApi';
 import React from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { toast } from 'sonner';
+
+type TBlogInputs = {
+  title: string;
+  description: string;
+  publish_date: string;
+  author_name: string;
+  blog_image: string;
+  total_likes: string;
+}
 
 const AddBlogPages = () => {
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<TBlogInputs>()
+
+  const [addblog] = useCreateBlogMutation();
+
+  const onSubmit: SubmitHandler<TBlogInputs> = async (data) => {
+    const toastId = toast.loading('Logging in');
+    const res = await addblog(data)
+    if (res) {
+      reset()
+      toast.success('Blog Add Successfull', { id: toastId, duration: 2000 });
+    }
+
+  }
+
+
   return (
     <>
-    <div className="flex items-center justify-center  my-10">
+      <div className="flex items-center justify-center  my-10">
         <div className="w-full bg-white shadow-lg rounded-lg p-6">
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <h2 className="text-2xl font-semibold mb-6 text-teal-600 text-center">Create Blog</h2>
             <div className="grid grid-cols-2 gap-6">
               {/* Title */}
@@ -17,10 +47,13 @@ const AddBlogPages = () => {
                 <input
                   type="text"
                   id="title"
-                  name="title"
+                  {...register("title")}
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
                   placeholder="Enter blog title"
                 />
+                {errors.title?.type === "required" && (
+                  <p role="alert" className='text-red-500'>Title is required</p>
+                )}
               </div>
               {/* Author Name */}
               <div>
@@ -32,11 +65,14 @@ const AddBlogPages = () => {
                 </label>
                 <input
                   type="text"
-                  name="author_name"
+                  {...register("author_name")}
                   id="author_name"
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
                   placeholder="Enter author name"
                 />
+                {errors.author_name?.type === "required" && (
+                  <p role="alert" className='text-red-500'>Author Name is required</p>
+                )}
               </div>
               {/* Publish Date */}
               <div>
@@ -48,10 +84,13 @@ const AddBlogPages = () => {
                 </label>
                 <input
                   type="date"
-                  name="publish_date"
+                  {...register("publish_date")}
                   id="publish_date"
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
                 />
+                {errors.publish_date?.type === "required" && (
+                  <p role="alert" className='text-red-500'>Publish date is required</p>
+                )}
               </div>
               {/* Total Likes */}
               <div>
@@ -63,11 +102,14 @@ const AddBlogPages = () => {
                 </label>
                 <input
                   type="number"
-                  name="total_likes"
+                  {...register("total_likes")}
                   id="total_likes"
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
                   placeholder="Enter total likes"
                 />
+                {errors.total_likes?.type === "required" && (
+                  <p role="alert" className='text-red-500'>Total likes is required</p>
+                )}
               </div>
             </div>
             {/* Blog Image (URL Input) */}
@@ -81,10 +123,13 @@ const AddBlogPages = () => {
               <input
                 type="url"
                 id="blog_image"
-                name="blog_image"
+                {...register("blog_image")}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
                 placeholder="Paste image URL here"
               />
+              {errors.blog_image?.type === "required" && (
+                <p role="alert" className='text-red-500'>Blog image is required</p>
+              )}
             </div>
             {/* Description */}
             <div>
@@ -96,11 +141,14 @@ const AddBlogPages = () => {
               </label>
               <textarea
                 id="description"
-                name="description"
+                {...register("description")}
                 rows={4}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
                 placeholder="Enter blog description"
               ></textarea>
+              {errors.description?.type === "required" && (
+                <p role="alert" className='text-red-500'>Description is required</p>
+              )}
             </div>
             <button
               type="submit"
@@ -111,7 +159,7 @@ const AddBlogPages = () => {
           </form>
         </div>
       </div>
-    
+
     </>
   )
 }

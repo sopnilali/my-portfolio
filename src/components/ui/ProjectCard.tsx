@@ -1,5 +1,4 @@
 import { Tproject } from '@/types';
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,9 +6,11 @@ import React from 'react';
 
 const ProjectCard = ({ project } : {project: Tproject}) => {
 
+    console.log(project)
+
     return (
         <div className=" rounded overflow-hidden shadow-lg p-6 m-4 bg-white">
-            <Image
+            <img
                 src={project?.image}
                 alt={project?.title}
                 width='500'

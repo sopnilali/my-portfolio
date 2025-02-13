@@ -6,8 +6,8 @@ const DashboardPage = async () => {
 
   const totalProject = await ServerModuler.getAllProjects()
   const totalBlog = await ServerModuler.AllBlogs()
+  const totalMessage = await ServerModuler.getAllMessages()
 
-  console.log(totalBlog.data.length)
 
 
   return (
@@ -65,7 +65,7 @@ const DashboardPage = async () => {
             {/* Total Message Card */}
             <StatsCard
               title="Total Message"
-              value={totalProject?.data ? totalProject?.data?.length : 0}
+              value={totalMessage?.data ? totalMessage?.data?.length : 0}
               icon={
                 <svg
                   className="w-6 h-6 text-gray-600" // Adjust size and color as needed

@@ -12,9 +12,9 @@ const Projects = async() => {
     <>
     <SectionTitle title='Featured Projects'/>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-    {allProjects?.data.slice(0,4).map((project : Tproject, index : string)=> (
+    {allProjects?.data?.length > 0 ? allProjects?.data.slice(0,4).map((project : Tproject, index : string)=> (
       <ProjectCard project={project} key={index}/>
-    ))}
+    )): <p className='text-2xl'>Not avaliable Project</p>}
   </div>
   {allProjects?.data.length > 4 ? <div className='text-center my-8'>  <Link className='mb-0 text-2xl font-normal bg-teal-500 px-4 py-2 rounded-lg hover:shadow-md' href={'/projects'}>All Projects</Link></div> : ""}
   </>

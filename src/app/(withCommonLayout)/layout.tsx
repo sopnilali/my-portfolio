@@ -3,6 +3,7 @@ import Navbar from '@/components/shared/Navbar'
 import { authOptions } from '@/utils/authOptions';
 import { getServerSession } from 'next-auth';
 import React from 'react'
+import { Toaster } from 'sonner';
 
 const Commonlayout =  async({children}: {children: React.ReactNode}) => {
 
@@ -11,6 +12,7 @@ const Commonlayout =  async({children}: {children: React.ReactNode}) => {
     <div>
          <Navbar session={session} />
          <div className='min-h-screen'>{children}</div>
+         <Toaster/>
          <Footer/>
     </div>
   )

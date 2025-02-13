@@ -41,9 +41,20 @@ const ProjectDetails = async(id : string)=> {
     return await res.json()
 }
 
+const getAllMessages = async()=> {
+    const res = await fetch('https://my-portfolio-server-amber.vercel.app/api/v2/messages', {
+        cache: 'no-cache',
+        next: {
+            revalidate: 30
+        }
+    })
+    return await res.json()
+}
+
 export const ServerModuler = {
     AllBlogs,
     SingleBlogs,
     ProjectDetails,
-    getAllProjects
+    getAllProjects,
+    getAllMessages
 }

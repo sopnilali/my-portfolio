@@ -1,5 +1,6 @@
 import React from 'react'
 import SideBar from '@/components/shared/SideBar'
+import { Toaster } from 'sonner'
 
 const dashboardLayoutPage = ({children}: {children: React.ReactNode}) => {
 
@@ -8,6 +9,7 @@ const dashboardLayoutPage = ({children}: {children: React.ReactNode}) => {
     <SideBar/>
     <div className='flex-1'>
     {children}
+    <Toaster />
     </div>
     </div>
   )

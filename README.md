@@ -1,4 +1,4 @@
-# NexaBlog-Starter-Pack
+# My-Portfolio-and-Blog-Website
 
 ## Installation:
 
