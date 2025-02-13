@@ -2,6 +2,7 @@
 
 import { useDeleteBlogMutation, useGetAllBlogsQuery } from '@/components/redux/feature/blogApi'
 import { Blog } from '@/types'
+import Link from 'next/link'
 import React from 'react'
 import { toast } from 'sonner'
 
@@ -19,7 +20,7 @@ const BlogsPage = () => {
 
       const res = await deleteBlog(blogId)
       if (res) {
-        toast.success('Project Add Successfull', { id: toastId, duration: 2000 });
+        toast.success('Delete Blog Successfull', { id: toastId, duration: 2000 });
       }
     }
 
@@ -57,7 +58,8 @@ const BlogsPage = () => {
                       <td className="p-2  text-left">{blog.author_name}</td>
                       <td className="p-2  text-left">{blog.total_likes}</td>
                       <td className="p-2  text-left">
-                        <button className="bg-blue-500 text-white px-3 py-1 rounded mr-2">Update</button>
+                      <button className="bg-blue-500 text-white px-3 py-1 rounded mr-2"><Link href={`/dashboard/blogs/${blog._id}`} >Update</Link>
+                      </button>
                         <button onClick={() => handleDeleteBlog(blog._id)} className="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
                       </td>
                     </tr>

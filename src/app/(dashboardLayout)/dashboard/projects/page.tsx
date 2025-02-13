@@ -2,6 +2,7 @@
 
 import { useDeleteProjectMutation, useGetAllProjectsQuery } from '@/components/redux/feature/projectApi';
 import { Tproject } from '@/types';
+import Link from 'next/link';
 import { toast } from 'sonner';
 import Swal from 'sweetalert2';
 
@@ -74,7 +75,8 @@ const ProjectsPage = () => {
                 <td className="p-2 text-left">{project.projectduration}</td>
                 <td className="p-2 font-bold text-left" style={{ color: project.projectstatus === "Completed" ? "green" : "orange" }}>{project.projectstatus}</td>
                 <td className="p-2 ">
-                  <button className="bg-blue-500 text-white px-3 py-1 rounded mr-2">Update</button>
+                  <button className="bg-blue-500 text-white px-3 py-1 rounded mr-2"><Link href={`/dashboard/projects/${project._id}`} >Update</Link>
+                  </button>
                   <button onClick={() => handleDeleteProject(project._id)} className="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
                 </td>
               </tr>
