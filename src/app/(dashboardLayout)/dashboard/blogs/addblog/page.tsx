@@ -9,7 +9,7 @@ type TBlogInputs = {
   title: string;
   description: string;
   publish_date: string;
-  author_name: string;
+  category: string;
   blog_image: string;
   total_likes: string;
 }
@@ -61,17 +61,17 @@ const AddBlogPages = () => {
                   htmlFor="author_name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Author Name
+                  Category Name
                 </label>
                 <input
                   type="text"
-                  {...register("author_name")}
-                  id="author_name"
+                  {...register("category")}
+                  id="category"
                   className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
-                  placeholder="Enter author name"
+                  placeholder="Enter category name"
                 />
-                {errors.author_name?.type === "required" && (
-                  <p role="alert" className='text-red-500'>Author Name is required</p>
+                {errors.category?.type === "required" && (
+                  <p role="alert" className='text-red-500'>Category Name is required</p>
                 )}
               </div>
               {/* Publish Date */}
@@ -118,7 +118,7 @@ const AddBlogPages = () => {
                 htmlFor="blog_image"
                 className="block text-sm font-medium text-gray-700"
               >
-                Blog Image URL
+                Image URL
               </label>
               <input
                 type="url"
@@ -137,17 +137,17 @@ const AddBlogPages = () => {
                 htmlFor="description"
                 className="block text-sm font-medium text-gray-700"
               >
-                Description
+                Content
               </label>
               <textarea
                 id="description"
                 {...register("description")}
                 rows={4}
                 className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
-                placeholder="Enter blog description"
+                placeholder="Enter blog Content"
               ></textarea>
               {errors.description?.type === "required" && (
-                <p role="alert" className='text-red-500'>Description is required</p>
+                <p role="alert" className='text-red-500'>Content is required</p>
               )}
             </div>
             <button

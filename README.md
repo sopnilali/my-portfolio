@@ -2,6 +2,8 @@
 
 ## Installation:
 
-1. Clone the repository.
-2. Install dependencies using `npm install`.
-3. Run the project using `npm run dev`.
+GitHub Client Repository: https://github.com/sopnilali/my-portfolio
+GitHub Backend Repository: https://github.com/sopnilali/my-portfolio-server
+Live link: https://my-new-portfolio-sepia-three.vercel.app/
+
+Demo Video: 

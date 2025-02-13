@@ -51,10 +51,22 @@ const getAllMessages = async()=> {
     return await res.json()
 }
 
+const deleteProject = async(id : string)=> {
+    const res = await fetch(`https://my-portfolio-server-amber.vercel.app/api/v2/projects/${id}`, {
+        method: 'DELETE',
+        cache: 'no-cache',
+        next: {
+            revalidate: 30
+        }
+    })
+    return await res.json()
+}
+
 export const ServerModuler = {
     AllBlogs,
     SingleBlogs,
     ProjectDetails,
     getAllProjects,
-    getAllMessages
+    getAllMessages,
+    deleteProject
 }

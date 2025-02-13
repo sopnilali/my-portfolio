@@ -34,11 +34,11 @@ const BlogsPage = () => {
                 <thead>
                   <tr className="bg-gray-200">
                     <th className="border border-gray-300 p-2">S/N</th>
-                    <th className="border border-gray-300 p-2">Blog Image</th>
+                    <th className="border border-gray-300 p-2">Image</th>
                     <th className="border border-gray-300 p-2">Title</th>
-                    <th className="border border-gray-300 p-2">Description</th>
+                    <th className="border border-gray-300 p-2">Content</th>
                     <th className="border border-gray-300 p-2">Publish Date</th>
-                    <th className="border border-gray-300 p-2">Author Name</th>
+                    <th className="border border-gray-300 p-2">Category</th>
                     <th className="border border-gray-300 p-2">Total Likes</th>
                     <th className="border border-gray-300 p-2">Actions</th>
                   </tr>
@@ -55,7 +55,7 @@ const BlogsPage = () => {
                         ? blog.description.slice(0, 50) + "..."
                         : blog.description}</td>
                       <td className="p-2  text-left">{blog.publish_date}</td>
-                      <td className="p-2  text-left">{blog.author_name}</td>
+                      <td className="p-2  text-left">{blog.category}</td>
                       <td className="p-2  text-left">{blog.total_likes}</td>
                       <td className="p-2  text-left">
                       <button className="bg-blue-500 text-white px-3 py-1 rounded mr-2"><Link href={`/dashboard/blogs/${blog._id}`} >Update</Link>
@@ -63,7 +63,7 @@ const BlogsPage = () => {
                         <button onClick={() => handleDeleteBlog(blog._id)} className="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
                       </td>
                     </tr>
-                  )): <tr><td colSpan={8} className="text-center">No projects found</td></tr>  }
+                  )): <tr><td colSpan={8} className="text-center">No blog found</td></tr>  }
                 </tbody>
               </table>
             </div>

@@ -3,6 +3,11 @@ import { getServerSession } from 'next-auth';
 import Image from 'next/image';
 import React from 'react'
 
+export const metadata = {
+  title: 'User Information',
+  description: 'Displays user information',
+}
+
 const UserInfoPage = async() => {
 
     const session = await getServerSession(authOptions);

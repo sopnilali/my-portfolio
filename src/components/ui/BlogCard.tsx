@@ -35,18 +35,12 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
           </Link>
         </p>
         <div className="flex justify-between items-center mt-5">
-          <div className="flex items-center">
-            <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
-              <Image
-                src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
-                width={100}
-                height={100}
-                alt="author image"
-                className="object-cover"
-              />
+          <div className="flex items-center ">
+            <div className=" rounded-full mr-2 overflow-hidden ">
+              <h2>Category:</h2>
             </div>
             <span className="text-sm font-medium text-gray-500">
-              {blog.author_name}
+               {`${blog.category}`}
             </span>
           </div>
           <div className="flex items-center text-sm text-gray-700">

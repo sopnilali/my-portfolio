@@ -2,6 +2,11 @@ import StatsCard from '@/components/shared/StatsCard'
 import { ServerModuler } from '@/utils'
 import React from 'react'
 
+export const metadata = {
+  title: 'Dashboard | MD Abdul Adud Portfolio',
+  description: 'Welcome to your dashboard, here you can track your progress, manage your projects, and communicate with your team.'
+}
+
 const DashboardPage = async () => {
 
   const totalProject = await ServerModuler.getAllProjects()

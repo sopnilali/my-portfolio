@@ -61,15 +61,15 @@ const UpdateBlogPage = () => {
                                     htmlFor="author_name"
                                     className="block text-sm font-medium text-gray-700"
                                 >
-                                    Author Name
+                                    Category Name
                                 </label>
                                 <input
                                     type="text"
-                                    {...register("author_name")}
-                                    defaultValue={BlogDetails?.data?.author_name}
-                                    id="author_name"
+                                    {...register("category")}
+                                    defaultValue={BlogDetails?.data?.category}
+                                    id="category"
                                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500"
-                                    placeholder="Enter author name"
+                                    placeholder="Enter Category "
                                 />
                             </div>
                             {/* Publish Date */}
@@ -112,7 +112,7 @@ const UpdateBlogPage = () => {
                                 htmlFor="blog_image"
                                 className="block text-sm font-medium text-gray-700"
                             >
-                                Blog Image URL
+                                Image URL
                             </label>
                             <input
                                 type="url"
@@ -129,7 +129,7 @@ const UpdateBlogPage = () => {
                                 htmlFor="description"
                                 className="block text-sm font-medium text-gray-700"
                             >
-                                Description
+                                Content
                             </label>
                             <textarea
                                 id="description"

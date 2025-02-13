@@ -12,14 +12,8 @@ const BlogDetailsCard = ({ blog }: { blog: Blog }) => {
       </p>
       <h2 className="text-center text-4xl font-semibold my-5">{blog.title}</h2>
       <div className="flex items-center justify-center bg-gray-100 mb-5 py-2 rounded-lg gap-2">
-        <Image
-          src="https://cdn-icons-png.flaticon.com/512/219/219986.png"
-          width={30}
-          height={30}
-          alt="author image"
-        />
-
-        <span className="text-lg font-medium">{blog.author_name}</span>
+      <h2>Category:</h2>
+        <span className="text-lg font-medium">{blog.category}</span>
       </div>
       <div className="flex gap-2 flex-col ">
       <figure className="mb-5">

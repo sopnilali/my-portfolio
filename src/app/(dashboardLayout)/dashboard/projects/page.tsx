@@ -1,19 +1,17 @@
 "use client"
 
-import { useDeleteProjectMutation, useGetAllProjectsQuery } from '@/components/redux/feature/projectApi';
 import { Tproject } from '@/types';
+import { ServerModuler } from '@/utils';
 import Link from 'next/link';
 import { toast } from 'sonner';
 import Swal from 'sweetalert2';
 
 
-const ProjectsPage = () => {
+const ProjectsPage = async() => {
 
-  const { data: projects } = useGetAllProjectsQuery(undefined)
-
-  const [deleteProject] = useDeleteProjectMutation()
+  const projects = await ServerModuler.getAllProjects();
   
-  const handleDeleteProject = (id: string) => {
+  const handleDeleteProject = async(id: string) => {
       Swal.fire({
         title: 'Are you sure?',
         text: "You won't be able to revert this!",
@@ -22,9 +20,9 @@ const ProjectsPage = () => {
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Yes, delete it!'
-      }).then((result) => {
+      }).then( async(result) => {
         if (result.isConfirmed) {
-          const res : any = deleteProject(id).unwrap();
+          const res : any = await ServerModuler.deleteProject(id)
           if(res){
              toast.success('Project Delete Successfull', { duration: 2000 });
           }
@@ -47,7 +45,7 @@ const ProjectsPage = () => {
               <th className="border border-gray-300 p-2">Title</th>
               <th className="border border-gray-300 p-2">Descriptions</th>
               <th className="border border-gray-300 p-2">Tools</th>
-              <th className="border border-gray-300 p-2">Links</th>
+              <th className="border border-gray-300 p-2">Live Link</th>
               <th className="border border-gray-300 p-2">Duration</th>
               <th className="border border-gray-300 p-2">Status</th>
               <th className="border border-gray-300 p-2">Actions</th>
@@ -66,11 +64,7 @@ const ProjectsPage = () => {
                   : project.descriptions}</td>
                 <td className="p-2 text-left">{project.tools}</td>
                 <td className="p-2 ">
-                  <a href={project.githubfrontend} className="text-blue-500" target="_blank" rel="noopener noreferrer">Frontend</a>
-                  <br />
-                  <a href={project.githubbackend} className="text-blue-500" target="_blank" rel="noopener noreferrer">Backend</a>
-                  <br />
-                  <a href={project.livelink} className="text-green-500" target="_blank" rel="noopener noreferrer">Live</a>
+                  <a href={project.livelink} className="text-green-500" target="_blank" rel="noopener noreferrer">Live Link</a>
                 </td>
                 <td className="p-2 text-left">{project.projectduration}</td>
                 <td className="p-2 font-bold text-left" style={{ color: project.projectstatus === "Completed" ? "green" : "orange" }}>{project.projectstatus}</td>

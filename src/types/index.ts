@@ -3,7 +3,7 @@ export interface Blog {
   title: string;
   description: string;
   publish_date: string;
-  author_name: string;
+  category: string;
   blog_image: string;
   total_likes: string;
 }
