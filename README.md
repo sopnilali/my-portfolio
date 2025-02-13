@@ -1,9 +1,13 @@
-# My-Portfolio-and-Blog-Website
+# My New Portfolio & Blog
 
-## Installation:
+Builded personal portfolio and blog website using Next.js to gain hands-on experience with dynamic routing, API integration, authentication, state management, and deployment. In this project will help we learn these concepts in a practical and engaging way.
+
+## Important Link:
 
 GitHub Client Repository: https://github.com/sopnilali/my-portfolio
+
 GitHub Backend Repository: https://github.com/sopnilali/my-portfolio-server
+
 Live link: https://my-new-portfolio-sepia-three.vercel.app/
 
-Demo Video: 
+Demo Video:  
