@@ -1,5 +1,6 @@
 "use client"
 
+import { useGetAllProjectsQuery } from '@/components/redux/feature/projectApi';
 import { Tproject } from '@/types';
 import { ServerModuler } from '@/utils';
 import Link from 'next/link';
@@ -7,9 +8,9 @@ import { toast } from 'sonner';
 import Swal from 'sweetalert2';
 
 
-const ProjectsPage = async() => {
+const ProjectsPage = () => {
 
-  const projects = await ServerModuler.getAllProjects();
+  const {data: projects} = useGetAllProjectsQuery(undefined)
   
   const handleDeleteProject = async(id: string) => {
       Swal.fire({
