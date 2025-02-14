@@ -6,7 +6,7 @@ import { FaCalendar } from "react-icons/fa";
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
   return (
-    <div className="w-full bg-white shadow-md rounded-lg overflow-hidden">
+    <div data-aos="flip-left" className="w-full bg-white shadow-md rounded-lg overflow-hidden">
       <div>
         <Image
           src={blog.blog_image}

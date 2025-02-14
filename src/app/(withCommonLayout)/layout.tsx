@@ -5,7 +5,9 @@ import { getServerSession } from 'next-auth';
 import React from 'react'
 import { Toaster } from 'sonner';
 
+
 const Commonlayout =  async({children}: {children: React.ReactNode}) => {
+
 
   const session = await getServerSession(authOptions);
   return (

@@ -10,7 +10,7 @@ const HeroSection = () => {
                 className="  "
             >
 
-                <div className=' py-20 mx-auto '>
+                <div data-aos="fade-right" className=' py-20 mx-auto '>
                     <div className="px-6 md:py-32 py-14 text-center md:px-12 lg:text-left flex items-center  ">
                         <div className="w-100 mx-auto sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-7xl">
                             <div className="grid items-center gap-12 lg:grid-cols-2">

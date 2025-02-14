@@ -9,7 +9,7 @@ const ProjectCard = ({ project } : {project: Tproject}) => {
     console.log(project)
 
     return (
-        <div className=" rounded overflow-hidden shadow-lg p-6 m-4 bg-white">
+        <div data-aos="flip-left"  className=" rounded overflow-hidden shadow-lg p-6 m-4 bg-white">
             <img
                 src={project?.image}
                 alt={project?.title}
